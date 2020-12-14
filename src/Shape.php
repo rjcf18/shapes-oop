@@ -41,4 +41,11 @@ class Shape
     {
         return $this->width * $this->length;
     }
+
+    public function getProperties(): ShapeProperties
+    {
+        return (new ShapeProperties($this->id, $this->name))
+            ->setWidth($this->width)
+            ->setLength($this->length);
+    }
 }
