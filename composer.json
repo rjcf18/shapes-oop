@@ -23,5 +23,14 @@
         "psr-4": {
             "Shapes\\Test\\": "test/"
         }
+    },
+    "scripts": {
+        "setup": "cd docker && docker-compose up -d && docker exec shapes_php composer install",
+        "deps-update": "docker exec shapes_php composer update",
+        "docker-up": "cd docker && docker-compose up -d",
+        "docker-down": "cd docker && docker-compose down",
+        "docker-stop": "cd docker && docker-compose stop",
+        "docker-build": "cd docker && docker-compose build",
+        "unit-tests": "docker exec shapes_php bin/phpunit --configuration test/Unit/phpunit.xml --colors=always"
     }
 }
