@@ -64,7 +64,8 @@ class ShapeTest extends TestCase
 
         $expectedProperties = (new ShapeProperties('id', 'Test'))
             ->setWidth(1.5)
-            ->setLength(2.5);
+            ->setLength(2.5)
+            ->setName('Test');
 
         $shapeProperties = $shape->getProperties();
 
