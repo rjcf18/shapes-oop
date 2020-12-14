@@ -1,0 +1,27 @@
+{
+    "name": "shapes/shapes",
+    "description": "Shapes OOP Test",
+    "type": "project",
+    "config": {
+        "bin-dir": "bin/",
+        "platform": {
+            "php": "8.0.0"
+        }
+    },
+    "require": {
+        "php": "8.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shapes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shapes\\Test\\": "test/"
+        }
+    }
+}
