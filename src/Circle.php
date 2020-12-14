@@ -5,8 +5,6 @@ class Circle extends Shape
 {
     protected float $radius;
 
-    private string $id;
-
     protected const SHAPE_TYPE = 3;
 
     private const PI = 3.14;
@@ -16,7 +14,6 @@ class Circle extends Shape
         parent::__construct($radius, $radius);
 
         $this->radius = $radius;
-        $this->id = uniqid();
     }
 
     public function getArea(): float

@@ -24,7 +24,7 @@ class CircleTest extends TestCase
     public function create_withInvalidParameters_throwsTypeError()
     {
         $this->expectException(TypeError::class);
-        $this->expectExceptionMessage('Argument #1 ($width) must be of type float, string given');
+        $this->expectExceptionMessage('Argument #1 ($radius) must be of type float, string given');
 
         $shape = new Circle("2.1");
 
