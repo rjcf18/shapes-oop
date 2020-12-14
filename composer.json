@@ -26,11 +26,11 @@
     },
     "scripts": {
         "setup": "cd docker && docker-compose up -d && docker exec shapes_php composer install",
-        "deps-update": "docker exec shapes_php composer update",
-        "docker-up": "cd docker && docker-compose up -d",
-        "docker-down": "cd docker && docker-compose down",
-        "docker-stop": "cd docker && docker-compose stop",
-        "docker-build": "cd docker && docker-compose build",
-        "unit-tests": "docker exec shapes_php bin/phpunit --configuration test/Unit/phpunit.xml --colors=always"
+        "depsUpdate": "docker exec shapes_php composer update",
+        "dockerUp": "cd docker && docker-compose up -d",
+        "dockerDown": "cd docker && docker-compose down",
+        "dockerStop": "cd docker && docker-compose stop",
+        "dockerBuild": "cd docker && docker-compose build",
+        "unitTests": "docker exec shapes_php bin/phpunit --configuration test/Unit/phpunit.xml --colors=always"
     }
 }
