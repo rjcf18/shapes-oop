@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+  php:
+    build:
+      context: php/.
+      args:
+        PHP_USER_UID: ${UID:-110}
+        PHP_USER_GID: ${GID:-115}
+    container_name: shapes_php
+    volumes:
+      - './../:/app'
+    networks:
+      - shapes-network
+
+networks:
+  shapes-network:
+    driver: bridge
