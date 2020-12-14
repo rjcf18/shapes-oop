@@ -3,21 +3,21 @@ namespace Shapes;
 
 class Shape
 {
+    private string $id;
+
     public ?string $name = null;
 
     protected float $width;
 
     protected float $length;
 
-    private string $id;
-
     protected const SHAPE_TYPE = 1;
 
     public function __construct(float $width, float $length)
     {
+        $this->id = uniqid();
         $this->width = $width;
         $this->length = $length;
-        $this->id = uniqid();
     }
 
     public function getName(): ?string
@@ -44,8 +44,14 @@ class Shape
 
     public function getProperties(): ShapeProperties
     {
-        return (new ShapeProperties($this->id, $this->name))
+        $shapeProperties = (new ShapeProperties($this->id))
             ->setWidth($this->width)
             ->setLength($this->length);
+
+        if (!is_null($this->name)) {
+            $shapeProperties->setName($this->name);
+        }
+
+        return $shapeProperties;
     }
 }

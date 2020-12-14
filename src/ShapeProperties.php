@@ -5,7 +5,7 @@ class ShapeProperties
 {
     private string $id;
 
-    private string $name;
+    private ?string $name = null;
 
     private ?float $width = null;
 
@@ -13,10 +13,9 @@ class ShapeProperties
 
     private ?float $radius = null;
 
-    public function __construct(string $id, string $name)
+    public function __construct(string $id)
     {
         $this->id = $id;
-        $this->name = $name;
     }
 
     public function getId(): string
@@ -24,9 +23,17 @@ class ShapeProperties
         return $this->id;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
+    }
+
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     public function getWidth(): ?float

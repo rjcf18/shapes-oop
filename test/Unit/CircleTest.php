@@ -59,16 +59,16 @@ class CircleTest extends TestCase
      */
     public function getProperties_returnsPropertiesObject()
     {
-        $shape = (new Circle(2.1))
-            ->setName('Test');
+        $shape = new Circle(2.1);
 
-        $expectedProperties = (new ShapeProperties('id', 'Test'))
+        $expectedProperties = (new ShapeProperties('id'))
             ->setRadius(2.1);
 
         $shapeProperties = $shape->getProperties();
 
-        $this->assertEquals($expectedProperties->getName(), $shapeProperties->getName());
         $this->assertNotNull($shapeProperties->getId());
+        $this->assertNull($shapeProperties->getName());
+        $this->assertEquals($expectedProperties->getName(), $shapeProperties->getName());
         $this->assertEquals($expectedProperties->getRadius(), $shapeProperties->getRadius());
         $this->assertEquals($expectedProperties->getRadius(), $shapeProperties->getWidth());
         $this->assertEquals($expectedProperties->getRadius(), $shapeProperties->getLength());
